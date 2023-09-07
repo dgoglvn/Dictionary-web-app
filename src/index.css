@@ -1,3 +1,19 @@
+html.dark {
+  background-color: #333;
+}
+
+html a {
+  color: #333;
+}
+
+html.dark h1,
+html.dark p,
+html.dark li,
+html.dark select,
+html.dark a {
+  color: #ffffff;
+}
+
 h1 {
   color: #444;
 }

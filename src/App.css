@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 .app {
   max-width: 800px;
   margin-inline: auto;
-  font-family: "Poppins", sans-serif;
 }
-
 form {
   display: flex;
   align-items: center;
@@ -25,4 +21,14 @@ input {
 .search-icon {
   color: #a444ed;
   font-size: 20px;
+}
+
+.source {
+  border-top: 1px solid #d1d1d1;
+  padding: 2rem 0;
+  color: gray;
+}
+
+.source a {
+  margin-left: 20px;
 }

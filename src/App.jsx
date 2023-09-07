@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import "./App.css";
 import WordHeading from "./components/wordHeading/WordHeading";
 import Meaning from "./components/meaning/Meaning";
 import { FiSearch } from "react-icons/fi";
+import TopNav from "./components/topNav/TopNav";
+import ThemeContext from "./context/ThemeContext";
+import { FontProvider } from "./context/FontContext";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
   const [inpVal, setInpVal] = useState("");
   const [wordData, setWordData] = useState([]);
   const [word, setWord] = useState("");
@@ -50,39 +54,37 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <main>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Search word..."
-            onChange={(e) => setInpVal(e.target.value)}
-          />
-          <FiSearch className="search-icon" />
-        </form>
-        {word !== "" ? (
-          <WordHeading word={word} phonetic={phonetic} audio={audio} />
-        ) : (
-          ""
-        )}
-        <Meaning wordData={wordData} partOfSpeech={partOfSpeech} />
-        {word !== "" ? (
-          <p>
-            Source
-            <a
-              href={source}
-              target="_blank"
-              rel="noreferrer"
-              style={{ marginLeft: "20px", color: "#333" }}
-            >
-              {source}
-            </a>
-          </p>
-        ) : (
-          ""
-        )}
-      </main>
-    </div>
+    <FontProvider>
+      <div className={`app ${theme === "dark" ? "dark" : ""}`}>
+        <TopNav />
+        <main>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Search word..."
+              onChange={(e) => setInpVal(e.target.value)}
+            />
+            <FiSearch className="search-icon" />
+          </form>
+          {word !== "" ? (
+            <WordHeading word={word} phonetic={phonetic} audio={audio} />
+          ) : (
+            ""
+          )}
+          <Meaning wordData={wordData} partOfSpeech={partOfSpeech} />
+          {word !== "" ? (
+            <p className="source">
+              Source
+              <a href={source} target="_blank" rel="noreferrer">
+                {source}
+              </a>
+            </p>
+          ) : (
+            ""
+          )}
+        </main>
+      </div>
+    </FontProvider>
   );
 }
 
