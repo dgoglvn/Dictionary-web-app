@@ -24,18 +24,19 @@ function App() {
     axios
       .get(`${url}/${inpVal}`)
       .then((response) => {
-        console.log(response.data);
+        // Storing word data so we can get items from it
         setWordData(response.data[0].meanings);
+        // Storing the word string by itself
         setWord(response.data[0].word);
+        // Storing the phonetic string
         setPhonetic(response.data[0].phonetic);
         if (response.data[0].meanings.length > 1) {
           for (let i = 0; i < response.data[0].meanings.length; i++) {
-            // console.log(response.data[0].meanings[i].partOfSpeech);
             partOfSpeech.push(response.data[0].meanings[i].partOfSpeech);
           }
         }
 
-        // Storing audio
+        // Storing the audio of the pronunciation
         if (response.data[0].phonetics.length > 1) {
           for (let i = 0; i < response.data[0].phonetics.length; i++) {
             setAudio(response.data[0].phonetics[i].audio);
@@ -43,6 +44,7 @@ function App() {
         } else {
           setAudio(response.data[0].phonetics[0].audio);
         }
+        // Storing the source link string
         setSource(response.data[0].sourceUrls);
       })
       .catch((error) => console.error(error));
@@ -50,7 +52,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    makeRequest();
+
+    if (inpVal === "") {
+      alert("You can't submit a blank form");
+    } else {
+      makeRequest();
+    }
   };
 
   return (
@@ -64,7 +71,7 @@ function App() {
               placeholder="Search word..."
               onChange={(e) => setInpVal(e.target.value)}
             />
-            <FiSearch className="search-icon" />
+            <FiSearch className="search-icon" onClick={handleSubmit} />
           </form>
           {word !== "" ? (
             <WordHeading word={word} phonetic={phonetic} audio={audio} />

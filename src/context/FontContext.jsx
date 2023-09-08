@@ -5,6 +5,12 @@ const FontContext = createContext("serif");
 export const FontProvider = ({ children }) => {
   const [font, setFont] = useState("serif");
 
+  /* document.documentElement returns the element that is the root element of the document
+   * which in this case is the <html> element.
+   *
+   * Else if statement to pair the font that is stored in localStorage to its
+   * respective font
+   */
   useEffect(() => {
     if (localStorage.getItem("font") === "serif") {
       document.documentElement.style.fontFamily = "serif";
@@ -15,15 +21,9 @@ export const FontProvider = ({ children }) => {
     }
   }, [font]);
 
+  // A function to handle the change when the user selects a different font option
   const fontChange = (e) => {
-    for (let i = 0; i < e.target.length; i++) {
-      // console.log(e.target[i].value === e.target.value);
-      // Don't really know where I'm going with this
-      // Trying to make it so when if the page is refreshed it loads the font that is stored in localStorage
-    }
-    console.log(e.target.value);
     setFont(e.target.value);
-
     localStorage.font = e.target.value;
   };
 

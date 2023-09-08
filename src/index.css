@@ -1,5 +1,5 @@
 html.dark {
-  background-color: #333;
+  background-color: #050505;
 }
 
 html a {
@@ -11,6 +11,14 @@ html.dark p,
 html.dark li,
 html.dark select,
 html.dark a {
+  color: #ffffff;
+}
+
+html.dark form {
+  background-color: #1f1f1f;
+}
+
+html.dark form input {
   color: #ffffff;
 }
 

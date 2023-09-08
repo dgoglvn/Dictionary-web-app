@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { BiBookOpen, BiMoon } from "react-icons/bi";
 import "./TopNav.css";
 import ThemeContext from "../../context/ThemeContext";
@@ -12,7 +12,12 @@ const TopNav = () => {
     <nav className="top-nav">
       <BiBookOpen className="logo" />
       <div className="options">
-        <select className="font-select" name="fonts" onChange={fontChange}>
+        <select
+          className="font-select"
+          name="fonts"
+          value={localStorage.font}
+          onChange={fontChange}
+        >
           <option value="serif">Serif</option>
           <option value="sans-serif">Sans Serif</option>
           <option value="monospace">Mono</option>
