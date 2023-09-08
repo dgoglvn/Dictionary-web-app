@@ -5,6 +5,9 @@ Users can:
 - Search for words using the input field
 - See the free Dictionary API's response for the searched word
 - Play the audio file for the word when it is available
+- Switch between light and dark themes
+- Switch between serif, sans serif, and monospace fonts
+- See a form validation message when trying to submit a blank form
 
 # Quick Start
 1. Clone this repository
