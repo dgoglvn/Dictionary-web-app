@@ -8,6 +8,7 @@ Users can:
 - Switch between light and dark themes
 - Switch between serif, sans serif, and monospace fonts
 - See a form validation message when trying to submit a blank form
+- View the optimal layout for the interface depending on their device's screen size
 
 # Quick Start
 1. Clone this repository
