@@ -1,5 +1,6 @@
 html.dark {
-  background-color: #050505;
+  /* background-color: #050505; */
+  background-color: #151515;
 }
 
 html a {
@@ -20,6 +21,11 @@ html.dark form {
 
 html.dark form input {
   color: #ffffff;
+}
+
+html.dark select {
+  background-color: #151515;
+  color: white;
 }
 
 h1 {

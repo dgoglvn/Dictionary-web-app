@@ -37,6 +37,7 @@ input {
 /* Mobile phones and tablets, portrait or landscape */
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   .app {
+    max-width: 100%;
     margin-inline: 2rem;
   }
 }
