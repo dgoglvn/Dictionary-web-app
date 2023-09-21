@@ -14,3 +14,10 @@ Users can:
 1. Clone this repository
 2. Run `npm install`
 3. Run `npm run dev` to start client
+
+## Screenshots
+
+![desktop-light](https://github.com/dgoglvn/Dictionary-web-app/blob/main/screenshots/desktop-light.png?raw=true)
+![desktop-dark](https://github.com/dgoglvn/Dictionary-web-app/blob/main/screenshots/desktop-dark.png?raw=true)
+![mobile-light](https://github.com/dgoglvn/Dictionary-web-app/blob/main/screenshots/mobile-light.png?raw=true)
+![mobile-dark](https://github.com/dgoglvn/Dictionary-web-app/blob/main/screenshots/mobile-dark.png?raw=true)
